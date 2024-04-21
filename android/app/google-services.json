@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704454907992",
+    "project_id": "ci-cd-11c74",
+    "storage_bucket": "ci-cd-11c74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704454907992:android:9afb7a162a86dd9313922d",
+        "android_client_info": {
+          "package_name": "com.example.ci_cd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAt2Vvf94vxC9Syu4n_OiPPs00bNhcoto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
