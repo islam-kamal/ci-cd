@@ -35,4 +35,4 @@ jobs:
         run:
           cd android
           bundle install
-          bundle exec fastlane android firebase_distribution
+          bundle exec fastlane firebase_distribution
