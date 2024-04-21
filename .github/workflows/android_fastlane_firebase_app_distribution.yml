@@ -5,33 +5,34 @@ on:
     branches: "master"
 
 jobs:
- distribute_to_firebase:
+  distribute_to_firebase:
     runs-on: ubuntu-latest
     steps:
-     - name: checkout my repo code
-       uses: actions/checkout@v3
-       
-     - name: setup jdk 11
-       uses: actions/setup-java@v2
-       with:
-         java-version: '11'
-         distribution: 'temurin'
-         
-     - name: install flutter
-       uses: subosito/flutter-actions@v2
-       with:
-         channel: stable
-         
-     - name: setup ruby
-       uses: ruby/setup-ruby@v1
-       with:
-        ruby-version: "3.2.3"
-        bundler-cache: true
-        working-directory: android
-     - name: build and distribute app
-       env: 
-        FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
+      - name: checkout my repo code
+        uses: actions/checkout@v3
+
+      - name: setup jdk 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: install flutter
+        uses: subosito/flutter-actions@v2
+        with:
+          channel: stable
+
+      - name: setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.3"
+          bundler-cache: true
+          working-directory: android
+
+      - name: build and distribute app
+        env: 
+          FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
         run:
-         cd android
-         bundle install
-         bundle exec fastlane android firebase_distribution
+          cd android
+          bundle install
+          bundle exec fastlane android firebase_distribution
