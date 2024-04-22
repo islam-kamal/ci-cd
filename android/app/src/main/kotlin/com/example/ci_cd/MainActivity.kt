@@ -1,4 +1,23 @@
-package com.example.flutter_app_firebase_feedback_demo
+package com.example.ci_cd
+
+/*import android.os.Bundle
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+    fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Firebase.appDistribution.showFeedbackNotification(
+            // Text providing notice to your testers about collection and
+            // processing of their feedback data
+            R.string.additionalFormText,
+            // The level of interruption for the notification
+            InterruptionLevel.HIGH)
+    }
+
+}*/
+
+
+
 
 import androidx.annotation.NonNull
 import com.google.firebase.appdistribution.InterruptionLevel
@@ -13,7 +32,7 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
-            "com.example.flutter_app_firebase_feedback_demo/feedback_notification",
+            ".../feedback_notification",
         ).setMethodCallHandler { call, result ->
             if (call.method == "show") {
                 showFeedbackNotification()
